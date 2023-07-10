@@ -1,0 +1,174 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+    max-width: 600px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1em;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: 1px solid green; 
+  }
+
+.messages {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    max-height: 80vh;
+    padding: 1em;
+    /*border-bottom: 1px solid #ddd;*/
+    flex-grow: 1;
+  }
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1em;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1em;
+    max-width: 60%;
+}
+
+.message-content span {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 0.7em;
+    color: grey;
+}
+
+.sent-message .message-content {
+    align-items: flex-end;
+    /*flex-direction: row;*/
+    flex-wrap: wrap;
+}
+
+.message-content p {
+    margin: 0;
+    padding: 0.5em 1em;
+    border-radius: 15px;
+}
+
+.sent-message .message-content p {
+    background: #007bff;
+    color: white;
+}
+
+.received-message .message-content p {
+    background: #fda085;
+    color: white;
+}
+
+.message-content span {
+    margin-top: 0.5em;
+    font-size: 0.7em;
+    color: grey;
+}
+
+.sent-message {
+    justify-content: flex-end;
+}
+
+.received-message {
+    justify-content: flex-start;
+}
+
+.reactions {
+    display: flex;
+    justify-content: space-around;
+    width: 50px;
+    height: 30px;
+    margin-top: 1em;
+}
+
+.reactions .badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reactions .badge .ant-btn {
+    padding: 0;
+}
+
+.message-input {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    margin-top: 1em;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    z-index: 1000;
+}
+
+.message-input .ant-btn {
+    margin: 0 0.5em;
+}
+
+.sent-message {
+    justify-content: flex-end;
+    animation: imessage 0.5s ease-out;
+}
+
+.received-message {
+    justify-content: flex-start;
+    animation: imessage 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.sent-message, .received-message {
+    animation: fadeIn 0.3s linear;
+}
+
+/* profile */  
+.chat-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;  /* Adjust this value to ensure the image is not cut off by the browser bar */
+}
+
+.profile-image-container {
+    position: absolute;
+    top: -50px;
+    z-index: 1;
+    padding-top: 100px;
+}
+
+.profile-image {
+border-radius: 50%;
+width: 100px;
+height: 100px;
+}
+
+.chat-container {
+/* Your existing chat-container styles... */
+height: 85vh;  /* Adjust this value according to the space needed for the image */
+}
+
+.chat-container::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 50px;
+background: #ffffff;
+}
